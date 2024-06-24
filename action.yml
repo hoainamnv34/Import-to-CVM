@@ -10,7 +10,7 @@ inputs:
     required: true
   pipeline_run_id:
     description: "pipeline_run_id"
-    required: false
+    required: true
   pipeline_run_url:
     description: "pipeline_run_url"
     required: false
