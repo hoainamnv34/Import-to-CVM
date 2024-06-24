@@ -1,0 +1,64 @@
+name: "Import-to-CVM"
+description: "Import scan results to Central Vulnerability Management"
+author: "hoainamnv34"
+inputs: 
+  host:
+    description: "Host of CVM"
+    required: true
+  project_id:
+    description: "ID of Project In CVM"
+    required: true
+  pipeline_run_id:
+    description: "pipeline_run_id"
+    required: false
+  pipeline_run_url:
+    description: "pipeline_run_url"
+    required: false
+  commit_hash:
+    description: "Commit hash"
+    required: false
+  branch_name:
+    description: "Branch name"
+    required: false
+  tool_type:
+    description: "Tool type"
+    required: true
+  test_title:
+    description: "Test title"
+    required: True
+  service_key:
+    description: "service_key"
+    required: false
+  report:
+    description: "Report for import"
+    required: false
+  # token:
+  #   description: "Token for import"
+  #   required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+  - --host 
+  - "${{ inputs.host }}" 
+  - --project_id 
+  - "${{ inputs.project_id }}"
+  - --pipeline_run_id
+  - "${{ inputs.pipeline_run_id }}"
+  - --pipeline_run_url 
+  - "${{ inputs.pipeline_run_url }}"
+  - --commit_hash 
+  - "${{ inputs.commit_hash }}"
+  - --branch_name
+  - "${{ inputs.branch_name }}"
+  # - --token
+  # - "${{ inputs.token }}"
+  - --tool_type
+  - "${{ inputs.tool_type }}"
+  - --test_title
+  - "${{ inputs.test_title }}"
+  - --service_key
+  - "${{ inputs.service_key }}"
+  - --report
+  - "${{ inputs.report }}"
