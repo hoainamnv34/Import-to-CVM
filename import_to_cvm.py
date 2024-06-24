@@ -59,11 +59,11 @@ def uploadToCVM(
     if service_key:
         params['service_key'] = service_key
 
-    # files = {}
+    files = {}
     # if file_path:
     #     files['file']=(file_path, open(file_path, 'rb'))
-
-    files = {'file': open(file_path, 'rb')}
+    if file_path:
+        files = {'file': open(file_path, 'rb')}
     # print(files['file'][1].read())
     
 
