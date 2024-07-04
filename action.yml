@@ -51,9 +51,9 @@ runs:
   - --project_id 
   - "${{ inputs.project_id }}"
   - --run_id
-  - "${{ inputs.pipeline_run_id }}"
+  - "${{ inputs.run_id }}"
   - --run_url 
-  - "${{ inputs.pipeline_run_url }}"
+  - "${{ inputs.run_url }}"
   - --commit_hash 
   - "${{ inputs.commit_hash }}"
   - --branch_name
