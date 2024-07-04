@@ -1,2 +1,3 @@
 #!/bin/bash
-python3 import_to_cvm.py --host "http://localhost:3001" --project_id 2 --pipeline_run_id "222" --pipeline_run_url "pipeline_run_url"  --commit_hash="commit_hash" --branch_name="branch_name" --tool_type="Gitleaks" --test_title="Secret Scan" --report "./report/gitleak-report/report.json" 
+# python3 import_to_cvm.py --host "http://localhost:3001" --project_id 1 --run_id "222" --run_url "run_url"  --commit_hash="commit_hash" --branch_name="branch_name" --tool_type="Gitleaks" --test_title="Secret Scan" --report "./report/gitleak-report/report.json" 
+python3 import_to_cvm.py --host "http://localhost:3001" --project_id 1 --run_id "222" --run_url "run_url"  --commit_hash="commit_hash" --branch_name="branch_name" --tool_type="SonarQube" --test_title="SAST" --server_url="https://sonarqube.vbeecore.com/api" --api_key="squ_1282bb51cee8066cd8ba140d15c10029e0c9d56f" --service_key="WebGoat-App"

@@ -8,11 +8,11 @@ inputs:
   project_id:
     description: "ID of Project In CVM"
     required: true
-  pipeline_run_id:
-    description: "pipeline_run_id"
+  run_id:
+    description: "run_id"
     required: true
-  pipeline_run_url:
-    description: "pipeline_run_url"
+  run_url:
+    description: "run_url"
     required: false
   commit_hash:
     description: "Commit hash"
@@ -26,8 +26,14 @@ inputs:
   test_title:
     description: "Test title"
     required: True
+  server_url:
+    description: "Server Url"
+    required: false
+  api_key:
+    description: "API Key"
+    required: false
   service_key:
-    description: "service_key"
+    description: "Service Key"
     required: false
   report:
     description: "Report for import"
@@ -44,20 +50,22 @@ runs:
   - "${{ inputs.host }}" 
   - --project_id 
   - "${{ inputs.project_id }}"
-  - --pipeline_run_id
+  - --run_id
   - "${{ inputs.pipeline_run_id }}"
-  - --pipeline_run_url 
+  - --run_url 
   - "${{ inputs.pipeline_run_url }}"
   - --commit_hash 
   - "${{ inputs.commit_hash }}"
   - --branch_name
   - "${{ inputs.branch_name }}"
-  # - --token
-  # - "${{ inputs.token }}"
   - --tool_type
   - "${{ inputs.tool_type }}"
   - --test_title
   - "${{ inputs.test_title }}"
+  - --server_url
+  - "${{ inputs.server_url }}"
+  - --api_key
+  - "${{ inputs.api_key }}"
   - --service_key
   - "${{ inputs.service_key }}"
   - --report
